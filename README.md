@@ -11,6 +11,8 @@ Then on filling the form successfully the user is redirected to the patients pag
 
 There's the option to use the searchbar to filter out any specific 'patient' client too.
 
+All clients in this case the patients details are accessible from an api endpoint: https://680c5df82ea307e081d3ce0e.mockapi.io/api/v1/messages/patients 
+
 ## Prerequisites
 - [Node.js](https://nodejs.org/) (v22 or higher)
 - [Ionic CLI](https://ionicframework.com/docs/cli) (v7.2.1 or higher)

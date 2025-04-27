@@ -1,0 +1,7 @@
+{
+  "name": "cemaApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

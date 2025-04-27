@@ -1,0 +1,45 @@
+.background-image {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/assets/undraw_medicine.png'); // 👈 Your image path here
+    background-size: cover;
+    background-position: center;
+    z-index: -1; // Send background behind everything
+  }
+  
+  .login-form {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .login-container{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 0;
+  }
+
+  ion-content {
+    --background: transparent !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  ion-item{
+    --background: transparent !important;
+  }
+
+  .center-button{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }

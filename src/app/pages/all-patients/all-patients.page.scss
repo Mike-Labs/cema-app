@@ -1,0 +1,43 @@
+.patient-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* This pushes name left, badge right */
+  }
+  
+  .illness-badge {
+    font-size: 0.8rem;
+  }
+  .card-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .blood-pressure-content, .heart-rate-content, .care-type-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .back-button{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .forward-button{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+  }
+
+  .forward-icon{
+    width: 24px;
+    height: 48px;
+    display: none !important;
+  }
+  

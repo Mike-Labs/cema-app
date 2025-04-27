@@ -1,0 +1,32 @@
+.background-content {
+    --background: url('/assets/dna-bg.png') no-repeat center center / cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .content-wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  .welcome-text {
+    text-align: center;
+    margin-top: 50px;
+    color: #333;
+    font-weight: 900;
+  }
+  
+  .button-container {
+    margin-bottom: 50px;
+    padding: 0 20px;
+  }
+  
+  .get-started-button {
+    --background: #3880ff; /* Customize button color */
+    color: white;
+  }
+  

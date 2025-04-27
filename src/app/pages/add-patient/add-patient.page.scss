@@ -1,0 +1,22 @@
+.radio-inline {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.image-upload {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .image-upload ion-label {
+    font-size: 16px;
+  }
+  
+  .image-upload ion-fab-button {
+    --background: #3880ff; /* you can customize */
+    --color: white;
+    margin-right: 8px; /* little breathing space on right */
+  }
+  

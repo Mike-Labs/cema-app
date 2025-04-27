@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Add Patient</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form [formGroup]="patientForm" (ngSubmit)="onSubmit()">
+
+    <!-- Image Upload -->
+    <ion-item class="image-upload">
+        <ion-label>Upload Image</ion-label>
+        <input 
+        type="file" 
+        (change)="onImageSelected($event)" 
+        accept="image/*"
+        #fileInput
+        hidden />
+
+        <ion-fab-button size="small" (click)="fileInput.click()" color="primary">
+          <ion-icon src="/assets/cloud-upload-outline.svg"></ion-icon>
+        </ion-fab-button>
+    </ion-item>
+    <div *ngIf="imagePreview" class="ion-text-center ion-margin-top">
+      <img [src]="imagePreview" alt="Preview" style="max-height: 150px;" />
+    </div>
+
+    <!-- Name -->
+    <ion-item>
+      <ion-label position="floating">Name</ion-label>
+      <ion-input type="text" formControlName="name"></ion-input>
+    </ion-item>
+
+    <!-- Age -->
+    <ion-item>
+      <ion-label position="floating">Age</ion-label>
+      <ion-input type="number" formControlName="age"></ion-input>
+    </ion-item>
+
+    <!-- Blood Pressure -->
+    <ion-item>
+      <ion-label position="floating">Blood Pressure</ion-label>
+      <ion-input type="text" formControlName="bloodPressure"></ion-input>
+    </ion-item>
+
+    <!-- Heart Rate -->
+    <ion-item>
+      <ion-label position="floating">Heart Rate</ion-label>
+      <ion-input type="number" formControlName="heartRate"></ion-input>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-label>Health Program</ion-label>
+      <ion-radio-group formControlName="illness" slot="end">
+        <div class="radio-inline">
+          <ion-radio value="malaria">Malaria</ion-radio>
+          <ion-radio value="tb">TuberCulosis</ion-radio>
+          <ion-radio value="hiv">HIV</ion-radio>
+        </div>
+      </ion-radio-group>
+    </ion-item>
+
+    <!-- Care Type Radio Buttons -->
+      <ion-item lines="none">
+        <ion-label>Care Type</ion-label>
+        <ion-radio-group formControlName="careType" slot="end">
+          <div class="radio-inline">
+            <ion-radio value="hospitalized">Hospitalized</ion-radio>
+            <ion-radio value="homecare">HomeCare</ion-radio>
+          </div>
+        </ion-radio-group>
+      </ion-item>
+        
+    <!-- Submit Button -->
+    <ion-button expand="block" class="ion-margin-top" type="submit" [disabled]="patientForm.invalid">
+      Submit
+    </ion-button>
+
+  </form>
+</ion-content>

@@ -1,6 +1,8 @@
 # cema-app
 Cema Health App is a program that simulates a basic health information system for managing clients and health programs/services.
 
+Live preview: https://cema-app-test.vercel.app/
+
 # health program
 The app has 3 health programs TB, Malaria and HIV
 

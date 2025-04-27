@@ -1,0 +1,44 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Signup</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+  <div class="background-image">
+    <div class="signup-form">
+      <ion-content [fullscreen]="true">
+        <div class="ion-padding">
+          <form [formGroup]="signupForm" (ngSubmit)="onSignup()">
+
+            <div class="signup-container">
+              <ion-item>
+                <ion-label position="floating">Email</ion-label>
+                <ion-input type="email" formControlName="email"></ion-input>
+              </ion-item>
+              <ion-text color="danger" *ngIf="signupForm.get('email')?.touched && signupForm.get('email')?.invalid">
+                <p *ngIf="signupForm.get('email')?.errors?.['required']">Email is required.</p>
+                <p *ngIf="signupForm.get('email')?.errors?.['email']">Enter a valid email.</p>
+              </ion-text>
+    
+              <ion-item>
+                <ion-label position="floating">Password</ion-label>
+                <ion-input type="password" formControlName="password"></ion-input>
+              </ion-item>
+              <ion-text color="danger" *ngIf="signupForm.get('password')?.touched && signupForm.get('password')?.invalid">
+                <p *ngIf="signupForm.get('password')?.errors?.['required']">Password is required.</p>
+                <p *ngIf="signupForm.get('password')?.errors?.['minlength']">Password must be at least 6 characters.</p>
+              </ion-text>
+    
+              <div class="center-button">
+                <ion-button expand="block" shape="round" type="submit" class="ion-margin-top" [disabled]="signupForm.invalid">
+                  Signup
+                </ion-button>
+              </div>
+            </div>
+  
+          </form>
+        </div>
+      </ion-content>
+    </div>
+  </div>

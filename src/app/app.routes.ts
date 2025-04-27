@@ -6,6 +6,10 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/home/home.page').then((m) => m.HomePage),
   },
   {
+    path: 'signup',
+    loadComponent: () => import('./pages/signup/signup.page').then( m => m.SignupPage)
+  },
+  {
     path: 'login',
     loadComponent: () => import('./pages/login/login.page').then( m => m.LoginPage)
   },
@@ -29,9 +33,5 @@ export const routes: Routes = [
   {
     path: '**',
     redirectTo: 'home'
-  },
-  {
-    path: 'home',
-    loadComponent: () => import('./pages/home/home.page').then( m => m.HomePage)
   }
 ];

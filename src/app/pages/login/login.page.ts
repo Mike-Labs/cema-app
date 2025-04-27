@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonText, IonButton, IonLabel, IonInput, IonItem, IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -17,6 +18,7 @@ export class LoginPage implements OnInit {
   loginForm!: FormGroup;
 
   constructor(
+    private authService: AuthService,
     private fb: FormBuilder,
     private router: Router,
     private toastController: ToastController
@@ -38,13 +40,23 @@ export class LoginPage implements OnInit {
   
     const { email, password } = this.loginForm.value;
   
-    if (email === 'admin@gmail.com' && password === '123456') {
-      await this.router.navigateByUrl('/add-patient');
-    } else {
+    try {
+      await this.authService.login(email, password); // Use your AuthService
+      console.log('Login successful');
+      await this.router.navigateByUrl('/add-patient'); // Navigate on success
+    } catch (error) {
+      console.error('Login error', error);
+  
       const toast = await this.toastController.create({
         message: 'Invalid email or password.',
         duration: 2000,
-        color: 'danger'
+        color: 'danger',
+        buttons: [
+          {
+            text: 'Dismiss',
+            role: 'cancel'
+          }
+        ]
       });
       await toast.present();
     }

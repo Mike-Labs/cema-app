@@ -15,11 +15,6 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/login/login.page').then( m => m.LoginPage)
   },
   {
-    path: '',
-    redirectTo: 'login',
-    pathMatch: 'full',
-  },
-  {
     path: 'add-patient',
     loadComponent: () => import('./pages/add-patient/add-patient.page').then( m => m.AddPatientPage),
     canActivate: [authGuard],
@@ -33,6 +28,11 @@ export const routes: Routes = [
     path: 'patient-details/:id',
     loadComponent: () => import('./pages/patient-details/patient-details.page').then( m => m.PatientDetailsPage),
     canActivate: [authGuard],
+  },
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full',
   },
   {
     path: '**',
